@@ -1,0 +1,62 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-12-04T09:38:42Z
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: jenkins-pvc
+    namespace: devops
+    resourceVersion: "8259350"
+    selfLink: /api/v1/namespaces/devops/persistentvolumeclaims/jenkins-pvc
+    uid: 632bfe3b-f7a8-11e8-8ca7-005056bb826d
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 8Gi
+    storageClassName: manual
+    volumeName: jenkins-pv
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 8Gi
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+    creationTimestamp: 2018-12-04T09:34:56Z
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: microclimate-pvc
+    namespace: devops
+    resourceVersion: "8258704"
+    selfLink: /api/v1/namespaces/devops/persistentvolumeclaims/microclimate-pvc
+    uid: dc881cb6-f7a7-11e8-8ca7-005056bb826d
+  spec:
+    accessModes:
+    - ReadWriteMany
+    resources:
+      requests:
+        storage: 8Gi
+    storageClassName: manual
+    volumeName: microclimate-pv
+  status:
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 8Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
